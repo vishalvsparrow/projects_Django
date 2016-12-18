@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block my_content %}
+
+
+     <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+           $("#next_button").hide();
+
+
+        });
+
+        $.myfunction = function call_me_on_my() {
+            $("#next_button").fadeIn(1500).show();
+
+        }
+
+        var count = 0;
+        var texts = ['You asked me what Python could exactly accomplish.','Now, since there is a lot of that,','this page is one of them.','Click below to get started'];
+
+
+        move();
+        function move() {
+            console.log("called");
+
+            var id = setInterval(greet,4000);
+
+            function greet(){
+                console.log(count);
+                if(count >= 4)
+                {
+                    clearInterval(id);
+                    console.log("cleared");
+                    $.myfunction();
+                }
+                else {
+                    console.log("incremented");
+                    $("#hello").fadeOut(1000, function () {
+                        $("#hello").text(texts[count++] + " ").fadeIn(1000);
+                    });
+                }
+            }
+        }
+
+        </script>
+
+    <h2 id ="hello">
+        Hello Corey!
+    </h2>
+    <br/>
+    <br/>
+      <div id="next_button">
+        <a class="btn waves-effect waves-light grey btn-large">Next</a>
+    </div>
+
+
+
+{% endblock %}

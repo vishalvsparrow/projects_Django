@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Strange Messages</title>
+        <link rel = "stylesheet" type="text/css" href = "{% static 'css/materialize.min.css' %}"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+
+    <style>
+        
+        .left_pad_a_little
+        {
+            padding-left: 2%;
+        }
+
+          .right_pad_a_little
+        {
+            padding-right: 44%;
+        }
+
+        .slight_right_pad_a_little
+        {
+            padding-right: 44%;
+        }
+        .content_block{
+            padding-top: 11%;
+
+        }
+        .content_block_inner{
+            padding-top: 22%;
+            padding-bottom: 22%;
+        }
+        
+    </style>
+    
+    
+</head>
+
+<body class = "indigo darken-2">
+
+<div class = "cyan darken-2">
+    <br/>
+    <div class="white-text text-darken-4 left_pad_a_little">
+        <h4>Never a' before</h4>
+    </div>
+    <br/>
+</div>
+<div class = "deep-orange lighten-2">
+    <br/>
+    <div class="white-text text-darken-4 center-align right_pad_a_little">
+        <h4>had I built a page</h4>
+    </div>
+    <br/>
+</div>
+<div class = "light-blue darken-2">
+    <br/>
+    <div class="white-text text-darken-4 center-align slight_right_pad_a_little">
+        <h4>to reply in Haikus</h4>
+    </div>
+    <br/>
+</div>
+<div class = "amber accent-2">
+    <br/>
+    <div class="center-align">
+     <i class="material-icons">mail_outline</i>
+        &nbsp;
+        &nbsp;
+     <i class="material-icons">people</i>
+        &nbsp;
+        &nbsp;
+     <i class="material-icons">pets</i>
+        &nbsp;
+        &nbsp;
+     <i class="material-icons">build</i>
+        &nbsp;
+        &nbsp;
+     <i class="material-icons">motorcycle</i>
+    </div>
+    <br/>
+</div>
+
+
+<div class="container center grey-text text-darken-2 content_block">
+    <div class="card card-margin content_block_inner">
+
+        {% block my_content %}
+        {% endblock %}
+
+    </div>
+</div>
+
+
+</body>
+
+</html>

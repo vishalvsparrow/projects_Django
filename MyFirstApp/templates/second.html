@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block my_content %}
+
+      <script type="text/javascript">
+            window.count = 0;
+            window.hellos = ["नमस्ते","કેમ છો?","Saluti","Hola","Bonjour","Salve","Hallo","こんにちは","привет","Guten Tag","Hei","Dzien' dobry ","Xin chào","Dia dhuit","Hello"];
+
+            function greet()
+            {
+                if(window.count >= window.hellos.length)
+                    window.count = 0;
+                $("#greeting").fadeOut(500,function(){
+                  $("#greeting").text(window.hellos[window.count++]+"!").fadeIn(500);
+                })
+            }
+            $(function(){
+                setInterval(greet,2000);
+                console.log("Hey geek! Nice to see you here!!")
+                console.log("If you are a graphic designer or a web developer, and would like to join us, drop us an email at utonexus@utonexus.com. :D")
+            })
+        </script>
+
+        <h2 id="greeting">Hi</h2>
+        <h2>Corey!</h2>
+
+
+
+
+{% endblock %}
