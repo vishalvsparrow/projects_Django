@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login to continue</title>
+    <link rel = "stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}"/>
+     <link rel = "stylesheet" type="text/css" href="{% static 'css/custom.css' %}"/>
+</head>
+<body class="indigo darken-2">
+
+
+<div class="row">
+    <div class="col m4 l4">&nbsp;</div>
+    <div class="col s12 m4 l4 perfect_center">
+        <div class="container grey-text text-darken-1">
+            <div class="card center-align ">
+                <div class="card-content">
+
+                    <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col m4 l4">&nbsp;</div>
+</div>
+
+</body>
+</html>

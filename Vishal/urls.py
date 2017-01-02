@@ -16,11 +16,15 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from MyFirstApp import views
+from django.contrib.auth import views as auth_views
+
+
 #from MyFirstApp.views import foo, corey
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/$', views.foo, name='foo'),
+    url(r'^index/$',views.foo, name='foo'),
     url(r'^corey/$',views.corey, name='corey'),
+    url(r'^login/$',auth_views.login),
     url(r'^$',views.foo, name='foo')
 ]
