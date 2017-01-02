@@ -19,7 +19,7 @@ from MyFirstApp import views
 from django.contrib.auth import views as auth_views
 
 
-#from MyFirstApp.views import foo, corey
+#from MyFirstApp.views import foo, corey, login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,5 +27,7 @@ urlpatterns = [
     url(r'^corey/$',views.corey, name='corey'),
     url(r'^login/$',auth_views.login),
     url(r'^$',views.foo, name='foo'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout')
+    url(r'^logout/$', auth_views.logout, {'next_page': '/login'}, name='logout')
+
+
 ]
