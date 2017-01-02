@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Login to continue</title>
-    <link rel = "stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}"/>
-     <link rel = "stylesheet" type="text/css" href="{% static 'css/custom.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <link rel = "stylesheet" type="text/css" href="{% static 'css/custom.css' %}"/>
 </head>
+
 <body class="indigo darken-2">
 
 
@@ -16,6 +18,8 @@
         <div class="container grey-text text-darken-1">
             <div class="card center-align ">
                 <div class="card-content">
+                    <img class="center-align" width = "200" src="{% static 'pictures/caution.jpg' %}">
+                        <h5>Thou shall not pass unless you are who I think you are</h5>
                     <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
