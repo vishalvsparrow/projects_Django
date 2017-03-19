@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/$',views.foo, name='foo'),
     url(r'^corey/$',views.corey, name='corey'),
+    url(r'^python/$',views.python,name='python'),
     url(r'^login/$',auth_views.login),
     url(r'^$',views.foo, name='foo'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/login'}, name='logout')
