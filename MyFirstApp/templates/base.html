@@ -4,20 +4,33 @@
 <head>
     <meta charset="UTF-8">
         <title>Strange Messages</title>
-        <link rel = "stylesheet" type="text/css" href = "{% static 'css/materialize.min.css' %}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-
+        <link rel = "stylesheet" type="text/css" href="{% static 'css/custom.css' %}"/>
 
     <style>
-        
+        .content_block_inner
+        {
+            padding-top: 22%;
+            padding-bottom: 22%;
+            padding-right: 11%;
+            padding-left: 11%;
+
+        }
+
+        .card-inner-pad
+        {
+            padding: 5%;
+        }
+
         .left_pad_a_little
         {
             padding-left: 2%;
         }
 
-          .right_pad_a_little
+        .right_pad_a_little
         {
             padding-right: 44%;
         }
@@ -26,18 +39,18 @@
         {
             padding-right: 44%;
         }
-        .content_block{
+        .content_block
+        {
             padding-top: 11%;
 
         }
-        .content_block_inner{
+        .content_block_inner
+        {
             padding-top: 22%;
             padding-bottom: 22%;
         }
-        
+
     </style>
-    
-    
 </head>
 
 <body class = "indigo darken-2">
@@ -83,16 +96,9 @@
     <br/>
 </div>
 
+{% block my_content %}
 
-<div class="container center grey-text text-darken-2 content_block">
-    <div class="card card-margin content_block_inner">
-
-        {% block my_content %}
-        {% endblock %}
-
-    </div>
-</div>
-
+{% endblock %}
 
 </body>
 

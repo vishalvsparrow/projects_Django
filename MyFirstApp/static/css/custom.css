@@ -11,3 +11,8 @@
     padding-top: 11%;
     padding-bottom: 11%;
 }
+
+.hide-card
+{
+    opacity: 0;
+}

@@ -18,3 +18,7 @@ def corey(request):
 
 def login(request):
     return render(request, auth_views.login, {'template_name': 'registration/login.html'})
+
+@login_required(login_url='/login')
+def python(request):
+    return render(request,"second.html",{})
