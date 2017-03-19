@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block my_content %}
 
+
      <script type="text/javascript">
 
         jQuery(document).ready(function () {
@@ -13,10 +14,30 @@
 
         }
 
-        var count = 0;
-        var texts = ['You asked me what Python could exactly accomplish.','Now, since there is a lot of that,','this page is one of them.','Click below to get started'];
 
-        move();
+        $(function()
+        {
+            var stop = 0;
+            var oTop = $('#hello').offset().top - window.innerHeight;
+            $(window).scroll(function()
+            {
+                var pTop = $('body').scrollTop();
+                if( pTop > oTop && stop != 1)
+                {
+                move();
+                stop = 1;
+                }
+            });
+        });
+
+
+
+        var count = 0;
+        var texts = ['You asked me what Python could exactly accomplish (6 months ago).','Now, since there is a lot that can be done,',
+            'this website will show you a few possibilities with Python.',
+            'Click below to get started'];
+
+        <!-- move();-->
         function move() {
             console.log("called");
 
@@ -41,14 +62,24 @@
 
         </script>
 
+    <div class="row">
+    <div class="container center grey-text text-darken-2 content_block">
+        <div class="card card-margin content_block_inner">
+
+
     <h2 id ="hello">
-        Hello Corey!
+        Hello, Corey!
     </h2>
     <br/>
     <br/>
       <div id="next_button">
-        <a class="btn waves-effect waves-light grey btn-large">Next</a>
+        <a class="btn waves-effect waves-light grey btn-large" href="/python/">Next</a>
     </div>
+
+     </div>
+    </div>
+</div>
+
 
 
 

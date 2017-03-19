@@ -1,29 +1,222 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block my_content %}
 
-      <script type="text/javascript">
-            window.count = 0;
-            window.hellos = ["नमस्ते","કેમ છો?","Saluti","Hola","Bonjour","Salve","Hallo","こんにちは","привет","Guten Tag","Hei","Dzien' dobry ","Xin chào","Dia dhuit","Hello"];
+    <style>
 
-            function greet()
-            {
-                if(window.count >= window.hellos.length)
-                    window.count = 0;
-                $("#greeting").fadeOut(500,function(){
-                  $("#greeting").text(window.hellos[window.count++]+"!").fadeIn(500);
-                })
+.hide-card
+{
+    opacity: 0;
+}
+    </style>
+
+    <script>
+
+    $(document).ready(function() {
+        
+    $(window).scroll( function(){
+
+
+        $('.hide-card').each( function(i) {
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if (bottom_of_window > bottom_of_object) {
+
+                $(this).animate({'opacity': '1'}, 1500);
             }
-            $(function(){
-                setInterval(greet,2000);
-                console.log("Hey geek! Nice to see you here!!")
-                console.log("If you are a graphic designer or a web developer, and would like to join us, drop us an email at utonexus@utonexus.com. :D")
-            })
-        </script>
+        })
 
-        <h2 id="greeting">Hi</h2>
-        <h2>Corey!</h2>
+          $('.hide-text').each( function(i) {
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if (bottom_of_window > bottom_of_object) {
+
+                $(this).animate({'opacity': '0'}, 5000);
+            }
+        })
 
 
 
+        });
+
+
+
+});
+    </script>
+
+
+    <div class="container center grey-text text-darken-2 content_block">
+     <p class="hide-text grey-text text-lighten-4"> (Pssstt... keep scrolling)</p>
+
+
+        <div class="row">
+            <div class = "card hide-card">
+                <div class="card-content">
+                    <div class="row">
+
+                            <div class="col s12 m12 l3">
+                                   <img class="card-image" width = 270px src="{% static 'pictures/numpy.jpg' %}">
+                            </div>
+
+                            <div class="col s12 m12 l8 push-l1">
+                                <div class="card-title ">
+                                    Numerical computation and scientific computation
+                                </div>
+                            <p> Python can use NumPy to do those nasty matrix operations and solve numerical algebra problems, similar to MATLAB!</p>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container center grey-text text-darken-2 content_block">
+        <div class="row">
+            <div class = "card hide-card">
+                <div class="card-content">
+                    <div class="row">
+
+                            <div class="col s12 m12 l3">
+                                   <img class="card-image" width = 270px src="{% static 'pictures/python_data.jpg' %}">
+                            </div>
+
+                            <div class="col s12 m12 l8 push-l1">
+                                <div class="card-title ">
+                                    Data Analysis
+                                </div>
+                            <p> You could run descriptive statistics on your data, and might as well do some exploratory data analysis! This is </p>
+                                quite useful when you think you or your data are too good for Excel xD
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container center grey-text text-darken-2 content_block">
+        <div class="row">
+            <div class = "card hide-card">
+                <div class="card-content">
+                    <div class="row">
+
+                            <div class="col s12 m12 l3">
+                                   <img class="card-image" width = 270px src="{% static 'pictures/python_ml.jpg' %}">
+                            </div>
+
+                            <div class="col s12 m12 l8 push-l1">
+                                <div class="card-title ">
+                                    Machine Learning
+                                </div>
+                            <p> This is where Python does the magic! You could use tonnes of pre-optimized libraries to implement machine learning algorithms,</p>
+                                and you might as well do some inferential satistics in the process, if creating evil robots is not something you're looking
+                                forward to :'D
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container center grey-text text-darken-2 content_block">
+        <div class="row">
+            <div class = "card hide-card">
+                <div class="card-content">
+                    <div class="row">
+
+                            <div class="col s12 m12 l3">
+                                   <img class="card-image" width = 270px src="{% static 'pictures/python_web.jpg' %}">
+                            </div>
+
+                            <div class="col s12 m12 l8 push-l1">
+                                <div class="card-title ">
+                                    Web Applications
+                                </div>
+                            <p> You could use frameworks such as Django and Flask to create some nice Content Management System web apps, or maybe just</p>
+                                simple web applications
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container center grey-text text-darken-2 content_block">
+        <div class="row">
+            <div class = "card hide-card">
+                <div class="card-content">
+                    <div class="row">
+
+                            <div class="col s12 m12 l3">
+                                   <img class="card-image" width = 270px src="{% static 'pictures/python_tinker.jpg' %}">
+                            </div>
+
+                            <div class="col s12 m12 l8 push-l1">
+                                <div class="card-title ">
+                                    Desktop applications
+                                </div>
+                            <p> Yes, that's right. Those GUI programs you see on Windows, Mac, or Linux? Using the Tinker Library for Python,</p>
+                                you can easily create those apps for your computer!
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container center grey-text text-darken-2 content_block">
+        <div class="row">
+            <div class = "card hide-card">
+                <div class="card-content">
+                    <div class="row">
+
+                            <div class="col s12 m12 l3">
+                                   <img class="card-image" width = 270px src="{% static 'pictures/numpy.jpg' %}">
+                            </div>
+
+                            <div class="col s12 m12 l8 push-l1">
+                                <div class="card-title ">
+                                    Genetics
+                                </div>
+                            <p> This should be of primary interest to you. Using the appropriate libraries, could run genetic algorithms, simulations,
+                                and what not! You'd know better xD </p>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container center grey-text text-darken-2 content_block">
+        <div class="row">
+            <div class = "card hide-card">
+                <div class="card-content">
+                    <div class="row">
+                            <div class="col s12 m12 l12">
+                                <div class="card-title ">
+                                    THIS WEB APP
+                                </div>
+                                <p>And finally, this simple website was built using the Django Framework for Python :)</p>
+                                <br/>
+                                <h3>
+                                Thank you
+                                </h3>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
